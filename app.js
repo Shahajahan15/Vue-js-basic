@@ -9,7 +9,8 @@
 			link2:{
 				text: "Youtube", title: "Go to youtube", url: "https://www.youtube.com"
 			},
-			className: "active",
+			activelink: "link1",
+			html: '<a href="https://www.youtube.com">about me</a>'
 		}
 
 	})

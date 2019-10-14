@@ -31,12 +31,15 @@
 	<div id="root">
 		<ul>
 			<li>
-				<a v-bind:class="className" :href="link1.url" v-bind:title="link1.title">{{ link1.text }}</a>
+				<a v-bind:class="{'active': activelink == 'link1'}" :href="link1.url" v-bind:title="link1.title">{{ link1.text }}</a>
 			</li>
 
 			<li>
-				<a v-bind:href="link2.url" :title="link2.title">{{ link2.text }}</a>       
+				<a :class="{'active': activelink == 'link2'}" v-bind:href="link2.url" :title="link2.title">{{ link2.text }}</a>       
 			</li>
+
+			<br><br><br>
+			<p v-html="html"></p>
 
 		</ul>
 	</div>

@@ -9,7 +9,9 @@
 </head>
 <body>
 	<div id="root">
-		{{ message }}
+		<p>Enter your name: </p>
+		<input type="tex" id="name" v-model="name">
+		<h3 id="output">Your name is: {{ name }}</h3>
 	</div>
 
 

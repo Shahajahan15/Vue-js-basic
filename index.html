@@ -12,8 +12,8 @@
 	<div id="root">
 		<h3 style="padding: 0px 10px">Skills</h3><hr>
 		<ul>
-			<li v-for="(skill, i) in skills">
-				{{i+1}}. {{ skill.name }} ({{skill.experience}})
+			<li v-for="(skill, i) in skills" v-if="skill.experience > 3">
+				<p>{{i+1}}. {{ skill.name }} ({{skill.experience}})</p>
 			</li>
 		</ul>
 	</div>

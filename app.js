@@ -3,10 +3,13 @@
 	var app = new Vue({
 		el: '#root',
 		data: {
-			name: "Shahajahan",
-		},
-		mounted: function () {
-			console.log("mounted")
+			link1: {
+				text: "Facebook", title: "Go to facebook", url: "https://www.facebook.com"
+			},
+			link2:{
+				text: "Youtube", title: "Go to youtube", url: "https://www.youtube.com"
+			},
+			className: "active",
 		}
 
 	})

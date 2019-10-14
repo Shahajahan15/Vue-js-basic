@@ -6,12 +6,39 @@
 	<title>Vue Js</title>
 	<!-- development version, includes helpful console warnings -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<style type="text/css">
+		ul{
+			list-style: none
+		}
+		li{
+			display: inline-block;
+			/*padding: 10px 5px;*/
+		}
+		a{
+			text-decoration: none;
+		}
+		.active{
+			background: #457;
+			color: #FFFFFF;
+			padding: 5px 8px;
+			display: block;
+		}
+
+
+	</style>
 </head>
 <body>
 	<div id="root">
-		<p>Enter your name: </p>
-		<input type="tex" id="name" v-model="name">
-		<h3 id="output">Your name is: {{ name }}</h3>
+		<ul>
+			<li>
+				<a v-bind:class="className" :href="link1.url" v-bind:title="link1.title">{{ link1.text }}</a>
+			</li>
+
+			<li>
+				<a v-bind:href="link2.url" :title="link2.title">{{ link2.text }}</a>       
+			</li>
+
+		</ul>
 	</div>
 
 

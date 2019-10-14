@@ -3,14 +3,14 @@
 	var app = new Vue({
 		el: '#root',
 		data: {
-			link1: {
-				text: "Facebook", title: "Go to facebook", url: "https://www.facebook.com"
-			},
-			link2:{
-				text: "Youtube", title: "Go to youtube", url: "https://www.youtube.com"
-			},
-			activelink: "link1",
-			html: '<a href="https://www.youtube.com">about me</a>'
+			skills: [
+				{name: "html", experience: 5},
+				{name: "css", experience: 4},
+				{name: "php", experience: 3},
+				{name: "python", experience: 2},
+				{name: "java", experience: 2},
+				{name: "javascript", experience: 4},
+			]
 		}
 
 	})

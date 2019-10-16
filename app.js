@@ -3,18 +3,27 @@
 	var app = new Vue({
 		el: '#root',
 		data: {
-			newSkill: "",
-			skills: ["html", "css", "php", "javascript"]
+			payments: [
+				{name: "houseRent", amount: 1500, paid: true},
+				{name: "electricity", amount: 1000, paid: false},
+				{name: "gas", amount: 800, paid: true},
+				{name: "water", amount: 700, paid: false},
+				{name: "net", amount: 600, paid: true},
+			]
 		},
-		methods: {
-			addSkill(){
-				// alert("adding....")
-				this.skills.push(this.newSkill); // add elements
-				this.newSkill = '';    // blank field
+		computed: {
+			unpaidPayments(){
+				return this.payments.filter(function(p){
+					return !p.paid;
+				})
 			},
-			removeSkill: function(i){
-				// alert("adding....")
-				this.skills.splice(i, 1); // remove elements
+
+			totalAmount(){
+				var sum = 0
+				for (var i = 0; i < this.payments.length; i++) {
+					sum += this.payments[i].amount
+				}
+				return sum
 			}
 		}
 	})

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -12,10 +12,14 @@
 	<div id="root">
 		<h3 style="padding: 0px 10px">Skills</h3><hr>
 		<ul>
-			<li v-for="(skill, i) in skills" v-if="skill.experience > 3">
-				<p>{{i+1}}. {{ skill.name }} ({{skill.experience}})</p>
+			<li v-for="(skill, i) in skills">
+				<p> <!-- v-on:click = @click -->
+				{{ i+1}}. {{ skill }} <button @click="removeSkill(i)">x</button>
+			</p>
 			</li>
 		</ul>
+		<input type="text" v-model="newSkill">
+		<button v-on:click="addSkill">add</button>   <!-- v-on:click = @click -->
 	</div>
 
 

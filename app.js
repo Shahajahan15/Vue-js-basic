@@ -3,17 +3,22 @@
 	var app = new Vue({
 		el: '#root',
 		data: {
-			skills: [
-				{name: "html", experience: 5},
-				{name: "css", experience: 4},
-				{name: "php", experience: 3},
-				{name: "python", experience: 2},
-				{name: "java", experience: 2},
-				{name: "javascript", experience: 4},
-			]
+			newSkill: "",
+			skills: ["html", "css", "php", "javascript"]
+		},
+		methods: {
+			addSkill(){
+				// alert("adding....")
+				this.skills.push(this.newSkill); // add elements
+				this.newSkill = '';    // blank field
+			},
+			removeSkill: function(i){
+				// alert("adding....")
+				this.skills.splice(i, 1); // remove elements
+			}
 		}
-
 	})
+
 
 
 /*	// javascript 

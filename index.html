@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,36 +7,69 @@
 	<!-- development version, includes helpful console warnings -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 
+<style type="text/css">
+	body{
+		background: #C2EAF6;
+	}
+	.pannelTitle{
+		background: #F6EFEF;
+		font-size: 24px;
+		color: #1818F0;
+		padding: 10px 20px;
+	}
+	.pannelContent{
+		background: #fff;
+		padding: 20px;
+	}
+	.close{
+		float: right;
+		color: red;
+		padding: 5px 10px 3px 10px;
+	}
+	.close:hover{
+		background: #ADF43C;
+		padding: 5px 10px;
+	}
+</style>
 </head>
 <body>
-	<div id="root">
-		<!-- <h3 style="padding: 0px 10px">Skills</h3><hr> -->
+	<!-- <div id="root">
+		<h3 style="padding: 0px 10px">Skills</h3><hr>
 		<h3 style="padding: 0px 10px">All Payments</h3><hr>
-		<!-- <ul>
+		<ul>
 			<li v-for="(payment, i) in payments">
 				<p> v-on:click = @click
-				{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
-			</p>
+					{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
+				</p>
 			</li>
-		</ul> -->
-		<!-- <input type="text" v-model="newSkill">
-		<button v-on:click="addSkill">add</button>  -->  <!-- v-on:click = @click -->
+		</ul>
+
+		<input type="text" v-model="newSkill">
+		<button v-on:click="addSkill">add</button>  v-on:click = @click
 
 		<h3 style="padding: 0px 10px">Unpaid Payments</h3><hr>
-<!-- 		<ul>
-	<li v-for="(payment, i) in unpaidPayments">
-		<p> v-on:click = @click
-		{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
-	</p>
-	</li>
-</ul>
-<h3 style="padding: 0px 10px">Total amount: {{ totalAmount }}</h3><hr> -->
-	<h3>{{ upperCaseName }}</h3>
-	<h3>{{ name | upper }}</h3>
-	<h3>{{ profession | upper }}</h3>
-	<h3>{{ name | lower }}</h3>
-	<h3>{{ date | bdformat }}</h3>
-		
+		<ul>
+			<li v-for="(payment, i) in unpaidPayments">
+				<p> v-on:click = @click
+					{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
+				</p>
+			</li>
+		</ul>
+
+		<h3 style="padding: 0px 10px">Total amount: {{ totalAmount }}</h3><hr>
+		<h3>{{ upperCaseName }}</h3>
+		<h3>{{ name | upper }}</h3>
+		<h3>{{ profession | upper }}</h3>
+		<h3>{{ name | lower }}</h3>
+		<h3>{{ date | bdformat }}</h3>
+	</div> -->
+
+	<div id="root">
+		<pannel title="this is pannel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque reiciendis aliquid eveniet fugiat veritatis aut obcaecati ipsam nulla, dicta natus praesentium cupiditate magnam, sapiente eos exercitationem ducimus quod, blanditiis saepe!">
+			<h3>Enter your name: </h3>
+			<input type="text" name="">
+			<button>submit</button>
+		</pannel>
 	</div>
 
 

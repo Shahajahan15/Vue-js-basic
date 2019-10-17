@@ -3,16 +3,21 @@
 	// component
 	Vue.component("pannel", {
 		template: `
-			<div class="pannel" v-if="show">  
-				<div class="pannelTitle">
-					<div class="close" @click="show = false">x</div>
-					{{ title }}
-				</div>
+			<div class="pannel">  
 				<div class="pannelContent">
-					{{ content }}
-				</div>
-				<div class="inputs">
-					<slot></slot>
+					<div class="pannelHeader">
+						<slot name="header"></slot>
+					</div>
+					<div class="pannelTitle">
+						<slot name="title"></slot>
+					</div>
+					<div class="pannelBody">
+						<slot name="body"></slot>
+					</div>
+					<div class="pannelFooter">
+						<button @click="$emit('onsave')">save</button>
+						<button>cancel</button>
+					</div>
 				</div>
 			</div>
 		`,
@@ -27,7 +32,7 @@
 	var app = new Vue({
 		el: "#root",
 		data: {
-
+			showLogin: false
 		}
 	})
 

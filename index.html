@@ -13,9 +13,9 @@
 	}
 	.pannelTitle{
 		background: #F6EFEF;
-		font-size: 24px;
+		/*font-size: 24px;*/
 		color: #1818F0;
-		padding: 10px 20px;
+		padding: 5px;
 	}
 	.pannelContent{
 		background: #fff;
@@ -29,6 +29,9 @@
 	.close:hover{
 		background: #ADF43C;
 		padding: 5px 10px;
+	}
+	.pannelFooter{
+		padding: 14px 0 14px 0;
 	}
 </style>
 </head>
@@ -65,10 +68,23 @@
 	</div> -->
 
 	<div id="root">
-		<pannel title="this is pannel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque reiciendis aliquid eveniet fugiat veritatis aut obcaecati ipsam nulla, dicta natus praesentium cupiditate magnam, sapiente eos exercitationem ducimus quod, blanditiis saepe!">
+		<!-- <pannel title="this is pannel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque reiciendis aliquid eveniet fugiat veritatis aut obcaecati ipsam nulla, dicta natus praesentium cupiditate magnam, sapiente eos exercitationem ducimus quod, blanditiis saepe!">
 			<h3>Enter your name: </h3>
 			<input type="text" name="">
 			<button>submit</button>
+		</pannel> -->
+		<button @click="showLogin=true">Login</button>
+		<pannel v-if="showLogin" @onsave="showLogin=false">
+			<template slot="header">
+				<h2>This is Header</h2>
+			</template>
+			<template slot="title">
+				<h3>Insert Your info:</h3>
+			</template>
+			<template slot="body">
+				<h4>Enter Your Name: </h4>
+				<input type="text" name="">
+			</template>
 		</pannel>
 	</div>
 

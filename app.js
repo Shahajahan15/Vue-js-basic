@@ -1,79 +1,71 @@
 
-	
+	var Event = new Vue();
 	// component
-	Vue.component("pannel", {
+	Vue.component("tabs", {
 		template: `
-			<div class="pannel">  
-				<div class="pannelContent">
-					<div class="pannelHeader">
-						<slot name="header"></slot>
-					</div>
-					<div class="pannelTitle">
-						<slot name="title"></slot>
-					</div>
-					<div class="pannelBody">
-						<slot name="body"></slot>
-					</div>
-					<div class="pannelFooter">
-						<button @click="$emit('onsave')">save</button>
-						<button>cancel</button>
-					</div>
+			<div class="tab">
+				<ul>
+					<li v-for="tab in tabs" :class="{ 'active': tab.selectedNow }" @click="makeEvent(tab.name)">
+						{{ tab.name }}
+					</li>
+				</ul>
+				<div class="details">
+					<slot></slot>
 				</div>
 			</div>
 		`,
-		props:['title', 'content'],
-		data: function(){
+		data: function () {
 			return {
-				show: true
+				tabs: []
+			}
+		},
+		created: function(){
+			this.tabs = this.$children
+		},
+		methods: {
+			makeEvent: function(s){
+				Event.$emit('tabchange', s)
 			}
 		}
-	})
+	});
+
+
+	Vue.component("tab", {
+		template: `
+			<div class="" v-if="selectedNow">
+				<slot></slot>
+			</div>
+		`,
+		data: function(){
+			return {
+				selectedNow: false
+			}
+		},
+
+		created: function(){
+			var currentTab = this;
+			currentTab.selectedNow = currentTab.selected;
+			Event.$on('tabchange', function(s){
+				if (s == currentTab.name) {
+					currentTab.selectedNow = true
+				}
+				else
+				{
+					currentTab.selectedNow = false
+				}
+			})
+		},
+
+		props: ['name', "selected"]
+	});
 
 	var app = new Vue({
 		el: "#root",
 		data: {
-			showLogin: false
 		}
 	})
 
-	//  global filters
-	// Vue.filter("lower", function(s){
-	// 	return s.toLowerCase()
-	// })
-
-	// var app = new Vue({
-	// 	el: '#root',
-	// 	data: {
-	// 		name: "Shahajahan All Cse",
-	// 		profession: "Software Engineering",
-	// 		date: new Date()
-	// 	},
-	// 	computed: {
-	// 		upperCaseName(){
-	// 			return this.name.toUpperCase()
-	// 		}
-	// 	},
-	// 	//  locally filters
-	// 	filters: {  
-	// 		upper(s){
-	// 			return s.toUpperCase()
-	// 		},
-
-	// 		bdformat(d){
-	// 			return d.getUTCDate() + "-" + (d.getUTCMonth()+1) + "-" + d.getUTCFullYear()
-	// 		}
-	// 	}
-	// })
 
 
-/*	// javascript 
-	var data = {name:"Safikul"}
-	document.getElementById("name").value = data.name;
-	document.getElementById("output").innerHTML = "Your name is : " + data.name;
 
-	function change() {
-		data.name = document.getElementById("name").value;
-		document.getElementById("output").innerHTML = "Your name is : " + data.name;
-	}*/
-	
 

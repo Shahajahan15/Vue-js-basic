@@ -9,83 +9,50 @@
 
 <style type="text/css">
 	body{
-		background: #C2EAF6;
+		background: #D4D4D4;
 	}
-	.pannelTitle{
-		background: #F6EFEF;
-		/*font-size: 24px;*/
-		color: #1818F0;
-		padding: 5px;
-	}
-	.pannelContent{
+	.tab{
+		width: 800px;
+		margin: 0 auto;
 		background: #fff;
-		padding: 20px;
 	}
-	.close{
-		float: right;
-		color: red;
-		padding: 5px 10px 3px 10px;
+	ul{
+		list-style: none;
+		background: #807F7F;
+		padding-top: 5px;
 	}
-	.close:hover{
-		background: #ADF43C;
-		padding: 5px 10px;
+	ul li{
+		display: inline-block;
+		padding: 8px;
 	}
-	.pannelFooter{
-		padding: 14px 0 14px 0;
+	ul li a{
+
 	}
+	.active{
+		background: #fff;
+		color: #151414
+	}
+	.details{
+		padding: 40px;
+	}
+
+
 </style>
 </head>
 <body>
-	<!-- <div id="root">
-		<h3 style="padding: 0px 10px">Skills</h3><hr>
-		<h3 style="padding: 0px 10px">All Payments</h3><hr>
-		<ul>
-			<li v-for="(payment, i) in payments">
-				<p> v-on:click = @click
-					{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
-				</p>
-			</li>
-		</ul>
-
-		<input type="text" v-model="newSkill">
-		<button v-on:click="addSkill">add</button>  v-on:click = @click
-
-		<h3 style="padding: 0px 10px">Unpaid Payments</h3><hr>
-		<ul>
-			<li v-for="(payment, i) in unpaidPayments">
-				<p> v-on:click = @click
-					{{ i+1}}. {{ payment.name }} ({{ payment.amount }})
-				</p>
-			</li>
-		</ul>
-
-		<h3 style="padding: 0px 10px">Total amount: {{ totalAmount }}</h3><hr>
-		<h3>{{ upperCaseName }}</h3>
-		<h3>{{ name | upper }}</h3>
-		<h3>{{ profession | upper }}</h3>
-		<h3>{{ name | lower }}</h3>
-		<h3>{{ date | bdformat }}</h3>
-	</div> -->
 
 	<div id="root">
-		<!-- <pannel title="this is pannel" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque reiciendis aliquid eveniet fugiat veritatis aut obcaecati ipsam nulla, dicta natus praesentium cupiditate magnam, sapiente eos exercitationem ducimus quod, blanditiis saepe!">
-			<h3>Enter your name: </h3>
-			<input type="text" name="">
-			<button>submit</button>
-		</pannel> -->
-		<button @click="showLogin=true">Login</button>
-		<pannel v-if="showLogin" @onsave="showLogin=false">
-			<template slot="header">
-				<h2>This is Header</h2>
-			</template>
-			<template slot="title">
-				<h3>Insert Your info:</h3>
-			</template>
-			<template slot="body">
-				<h4>Enter Your Name: </h4>
-				<input type="text" name="">
-			</template>
-		</pannel>
+		<tabs>
+			<tab name="tab1" selected="true">
+				Tab 1 content.... <button>btn1</button>
+			</tab>
+			<tab name="tab2">
+				Tab 2 content.... 
+			</tab>
+			<tab name="tab3">
+				Tab 3 content....
+			</tab>
+		</tabs>
 	</div>
 
 
@@ -93,5 +60,6 @@
 	<!-- development version, includes helpful console warnings -->
 	<script src="vue.js"></script>
 	<script src="app.js"></script>
+
 </body>
 </html>

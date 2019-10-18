@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Vue Js</title>
+
+	<style type="text/css">
+
+	.foo{
+		background: #66D117;
+		text-align: center;
+		width: 800px;
+		margin: 50px auto;
+		min-height: 250px;
+	}
+	.fade-enter-active, .fade-leave-active{
+		transition: opacity 1s;
+	}
+	.fade-enter, .fade-leave-to{
+		opacity: 0;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div id="root">
+		<button @click="show = !show">Toggle</button>
+		
+		<transition name="fade">
+			<div class="foo" v-show="show">
+				<p>Lorem ipsum dolor sit amet.</p>
+			</div>
+		</transition>
+
+	</div>
+
+	<!-- development version, includes helpful console warnings -->
+	<script src="vue.js"></script>
+	<script src="animate.js"></script>
+</body>
+</html>

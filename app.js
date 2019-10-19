@@ -1,4 +1,69 @@
 
+var Home = {
+		template: `
+			<div class="main">
+				<div class="foo">
+					<h3>Home</h3>
+					<p>Home page content goes here .....</p>
+				</div>
+			</div>
+		`
+	};
+
+	var About = {
+		template: `
+			<div class="main">
+				<div class="foo">
+					<h3>About</h3>
+					<p>About page content goes here .....</p>
+				</div>
+			</div>
+		`
+	};
+
+	var Contact = {
+		template: `
+			<div class="main">
+				<div class="foo">
+					<h3>Contact</h3>
+					<p>Contact page content goes here .....</p>
+				</div>
+			</div>
+		`
+	};
+
+	var Blog = {
+		template: `
+			<div class="main">
+				<div class="foo">
+					<h3>Blog</h3>
+					<p>Blog page content goes here .....</p>
+				</div>
+			</div>
+		`
+	};
+
+	var routes = [
+		{path: '/home', component: Home},
+		{path: '/about', component: About},
+		{path: '/contact', component: Contact},
+		{path: '/blog', component: Blog}
+	];
+
+	var router = new VueRouter({
+		routes: routes,
+		mode: 'history',
+		base: '/Vuerouter'
+	})
+
+	var app = new Vue({
+		router: router
+	}).$mount("#root")
+
+
+/*
+
+	// component
 	var Event = new Vue();
 	// component
 	Vue.component("tabs", {
@@ -60,12 +125,8 @@
 	});
 
 	var app = new Vue({
-		el: "#root",
-		data: {
-		}
-	})
-
-
-
-
+	el: '#root',
+	data: {
+	}
+})*/
 
